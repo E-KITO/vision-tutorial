@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --partition=interactive
+#SBATCH --partition=small-creator
 #SBATCH --time=01:00:00
-#SBATCH --output=build_%J.log
+#SBATCH --output=log/build_%J.log
 
-rm -f env.sif
+rm -f env/env.sif
 
-apptainer build env.sif env.def
+apptainer build env/env.sif env/env.def
 
 if [ $? -eq 0 ]; then
     echo "Build successful!"

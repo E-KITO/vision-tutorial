@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --partition=interactive
-#SBATCH --output=setup_%j.log
+#SBATCH --partition=small-creator
+#SBATCH --output=log/setup_%j.log
 
-CONTAINER_IMAGE="env.sif"
+CONTAINER_IMAGE="env/env.sif"
 
 # uvのキャッシュディレクトリをホスト側に固定（高速化のため）
 export UV_CACHE_DIR="$(pwd)/.uv_cache"

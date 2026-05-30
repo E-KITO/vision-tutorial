@@ -1,0 +1,77 @@
+{
+  "os": "Linux-6.17.0-22-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2026-05-29T08:06:52.651456Z",
+  "program": "/workspace/filesrv01/kito/vision-tutorial/scripts/01_train_cifar-10_test.py",
+  "codePath": "scripts/01_train_cifar-10_test.py",
+  "codePathLocal": "scripts/01_train_cifar-10_test.py",
+  "git": {
+    "remote": "https://github.com/E-KITO/vision-tutorial.git",
+    "commit": "67ad1b2d4f3a4bf77cfbf624859a7461054728f5"
+  },
+  "email": "kitoueita1130@gmail.com",
+  "root": "/workspace/filesrv01/kito/vision-tutorial",
+  "host": "creator2",
+  "executable": "/workspace/filesrv01/kito/vision-tutorial/.venv/bin/python3",
+  "cpu_count": 20,
+  "cpu_count_logical": 28,
+  "gpu": "NVIDIA RTX A6000",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "67108864",
+      "used": "16384"
+    }
+  },
+  "memory": {
+    "total": "134822813696"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere",
+      "uuid": "GPU-7ec9ef6c-5238-15c9-9d1c-8666fcb73571"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "slurm": {
+    "cluster_name": "(null)",
+    "conf": "/etc/slurm/slurm.conf",
+    "cpus_on_node": "4",
+    "cpus_per_task": "4",
+    "gpus_on_node": "1",
+    "gtids": "0",
+    "job_account": "mizuno_group",
+    "job_cpus_per_node": "4",
+    "job_end_time": "1780045607",
+    "job_gid": "2000",
+    "job_gpus": "0",
+    "job_id": "2373",
+    "job_name": "vision-tutorial",
+    "job_nodelist": "creator2",
+    "job_num_nodes": "1",
+    "job_partition": "small-creator",
+    "job_qos": "normal",
+    "job_start_time": "1780042007",
+    "job_uid": "2014",
+    "job_user": "kito",
+    "jobid": "2373",
+    "localid": "0",
+    "mem_per_node": "16384",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "creator2",
+    "prio_process": "0",
+    "procid": "0",
+    "submit_dir": "/workspace/filesrv01/kito/vision-tutorial",
+    "submit_host": "parent",
+    "task_pid": "1330194",
+    "tasks_per_node": "1",
+    "topology_addr": "creator2",
+    "topology_addr_pattern": "node",
+    "tres_per_task": "cpu:4"
+  },
+  "writerId": "qgwbt0exzse33odyshffj14vqsb845hk"
+}

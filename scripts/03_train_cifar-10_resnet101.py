@@ -116,7 +116,7 @@ def main():
         # record best acc
         if epoch_test_acc > best_acc:
             best_acc = epoch_test_acc
-            torch.save(net.state_dict(), './output/best_resnet50_cifar10.pth')
+            torch.save(net.state_dict(), './output/best_resnet101_cifar10.pth')
 
     print(f'Finished Training. Best Test Accuracy: {best_acc:.2f}%')
 

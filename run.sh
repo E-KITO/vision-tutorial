@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=Hello_test
-#SBATCH --partition=batch
+#SBATCH --job-name=vision-tutorial-resnet50-cifar10
+#SBATCH --partition=medium-creator
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
 #SBATCH --mem=16G
@@ -8,8 +8,8 @@
 #SBATCH --error=/dev/null
 
 # 環境変数として.bashrcを宣言
-source ~/.bashrc
-CONTAINER_IMAGE="env.sif"
+source ../.workspace_rc
+CONTAINER_IMAGE="env/env.sif"
 
 # sifがあるかどうかを確認、なければエラーを出す
 if [ ! -f $CONTAINER_IMAGE ]; then
@@ -37,4 +37,4 @@ git diff > "$OUT_DIR/git_diff.patch"
 ln -snf "$(realpath $OUT_DIR)" results/latest
 
 # コード実行
-apptainer exec --nv $CONTAINER_IMAGE bash -c "uv run python scripts/00_test.py"
+apptainer exec --nv $CONTAINER_IMAGE bash -c "uv run python scripts/04_train_cifar-10_resnet152.py"

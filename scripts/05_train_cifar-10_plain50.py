@@ -7,7 +7,7 @@ import wandb
 from tqdm import tqdm
 import sys
 sys.path.append('./src/my_project')
-from model import Resblock, get_ResNet50
+from model_plain import Plainblock, get_Plain50
 
 
 def main():
@@ -18,7 +18,7 @@ def main():
         # Set the wandb project where this run will be logged.
         project="resnet-test",
         # Track hyperparameters and run metadata.
-        name="resnet-50test"
+        name="plain50-test"
     )
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -49,7 +49,7 @@ def main():
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
 
     # 2. モデル、損失関数、最適化関数の定義
-    net = get_ResNet50(Resblock, num_classes=10).to(device)
+    net = get_Plain50(Plainblock, num_classes=10).to(device)
     criterion = nn.CrossEntropyLoss()
 
     optimizer = optim.SGD(net.parameters(), lr=initial_lr, momentum=0.9, weight_decay=5e-4)
@@ -116,7 +116,7 @@ def main():
         # record best acc
         if epoch_test_acc > best_acc:
             best_acc = epoch_test_acc
-            torch.save(net.state_dict(), './output/best_resnet50_cifar10.pth')
+            torch.save(net.state_dict(), './output/best_plain50_cifar10.pth')
 
     print(f'Finished Training. Best Test Accuracy: {best_acc:.2f}%')
 
