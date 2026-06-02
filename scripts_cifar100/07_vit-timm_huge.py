@@ -73,7 +73,7 @@ def main():
         correct = 0
         total = 0
 
-        for images, labels in trainloader:
+        for images, labels in tqdm(trainloader, desc=f"Epoch {epoch+1}/{epochs} [Train]"):
             images, labels = images.to(device), labels.to(device)
 
             optimizer.zero_grad()
@@ -97,7 +97,7 @@ def main():
         test_total = 0
 
         with torch.no_grad():
-            for images, labels in testloader:
+            for images, labels in tqdm(testloader, desc=f"Epoch {epoch+1}/{epochs} [Test]"):
                 images, labels = images.to(device), labels.to(device)
                 outputs = model(images)
                 loss = criterion(outputs, labels)
