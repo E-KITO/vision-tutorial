@@ -15,7 +15,7 @@ def main():
         # Set the wandb entity where you project wil be logged (generally your team name).
         entity="kitoueita1130-the-university-of-tokyo",
         project="resnet-cifar100",
-        name="vit-timm"
+        name="vit-timm-tiny"
     )
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -55,7 +55,7 @@ def main():
     # timm から事前学習済み ViT モデルをロード
     print("Loading pretrained ViT model from timm...")
 
-    model = timm.create_model('vit_base_patch16_224', pretrained=True, num_classes=num_classes)
+    model = timm.create_model('vit_tiny_patch16_224', pretrained=True, num_classes=num_classes)
     model = model.to(device)
 
     # 損失関数と最適化関数の定義
@@ -118,7 +118,7 @@ def main():
         # record best acc
         if val_acc > best_acc:
             best_acc = val_acc
-            torch.save(model.state_dict(), './output/best_vit-timm_cifar100.pth')
+            torch.save(model.state_dict(), './output/best_vit-timm_cifar100_tiny.pth')
 
 
 print("Training Complete!")
